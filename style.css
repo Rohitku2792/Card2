@@ -1,0 +1,88 @@
+body{
+    box-sizing: border-box;
+    background-color: #000;
+    margin: 0;
+    padding: 0;  
+}
+.conainer{
+    position: absolute;
+    top: 10%;
+    left: 50%;
+}
+.card {
+    width: 450px;
+    height: 300px;
+    border: 1px solid black;
+    background-color: #ffffff33;
+    color: white;
+    position: relative;
+    top: 50%;
+    padding-left: 10px;
+    margin-top: 4px;
+    margin-left: 4px;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 0; 
+    border-bottom: 54px solid #ffffff33;
+    transition:  bottom 0.5s ease-in, right 0.5s ease-in;
+    transform: rotate(-45deg);
+}
+
+.card:hover::before {
+    width: 180%;
+    height: 100%;
+    bottom: -80%;
+    right: -80%;
+    transition: width 0.5s ease-in;
+    animation: scrollLine 3s linear ;
+}
+
+@keyframes scrollLine {
+    0% {
+        bottom: 0;
+        right: 0;
+    }
+    100% {
+        bottom: 100%;
+        right: 100%;
+    }
+}
+
+
+
+.card h1{
+    font-weight: bolder;
+    font-size: 60px;
+    color: #ffffff33;
+    font-style: normal;
+    margin-bottom: 0;   
+}
+
+.card h3{
+    font-weight: 800;
+}
+
+
+.card p{
+    font-weight: lighter;  
+}
+
+.btn a {
+    margin-left: 4px;
+    text-decoration: none;
+    border: 1px solid black;
+    padding: 6px 10px 6px 10px;
+    transition: color 0.4s ease, background-color 0.4s ease;
+    color: #fff;
+}
+
+.btn a:hover{
+    background-color: blueviolet;
+}
